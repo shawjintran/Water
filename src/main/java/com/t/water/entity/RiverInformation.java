@@ -10,40 +10,36 @@ import lombok.Data;
 
 /**
  * 
- * @TableName dev_information
+ * @TableName river_information
  */
-@TableName(value ="dev_information")
+@TableName(value ="river_information")
 @Data
-public class DevInformation implements Serializable {
+public class RiverInformation implements Serializable {
     /**
      * 
      */
-    private Long devId;
+    @TableId
+    private Long riverId;
 
     /**
      * 
      */
-    private Integer devLastLat;
+    private String riverLat;
 
     /**
      * 
      */
-    private Integer devLastLon;
+    private String riverLon;
 
     /**
      * 
      */
-    private Integer devStatus;
+    private String riverStatus;
 
     /**
      * 
      */
-    private Integer devLastPower;
-
-    /**
-     * 
-     */
-    private Date createdTime;
+    private Date createTime;
 
     /**
      * 

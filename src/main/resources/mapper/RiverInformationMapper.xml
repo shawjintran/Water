@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.t.water.mapper.RiverInformationMapper">
+
+    <resultMap id="BaseResultMap" type="com.t.water.entity.RiverInformation">
+            <id property="riverId" column="river_id" jdbcType="BIGINT"/>
+            <result property="riverLat" column="river_lat" jdbcType="VARCHAR"/>
+            <result property="riverLon" column="river_lon" jdbcType="VARCHAR"/>
+            <result property="riverStatus" column="river_status" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="isDeleted" column="is_deleted" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        river_id,river_lat,river_lon,
+        river_status,create_time,update_time,
+        is_deleted
+    </sql>
+</mapper>

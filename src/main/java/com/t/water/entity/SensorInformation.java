@@ -10,40 +10,51 @@ import lombok.Data;
 
 /**
  * 
- * @TableName dev_information
+ * @TableName sensor_information
  */
-@TableName(value ="dev_information")
+@TableName(value ="sensor_information")
 @Data
-public class DevInformation implements Serializable {
+public class SensorInformation implements Serializable {
     /**
      * 
      */
-    private Long devId;
+    @TableId
+    private Long sensorId;
 
     /**
      * 
      */
-    private Integer devLastLat;
+    private String sensorLastTurbidity;
 
     /**
      * 
      */
-    private Integer devLastLon;
+    private String sensorLastCod;
 
     /**
      * 
      */
-    private Integer devStatus;
+    private String sensorLastTds;
 
     /**
      * 
      */
-    private Integer devLastPower;
+    private String sensorLastPh;
 
     /**
      * 
      */
-    private Date createdTime;
+    private Integer sensorLastTemperature;
+
+    /**
+     * 
+     */
+    private Integer sensorPumpStatus;
+
+    /**
+     * 
+     */
+    private Date createTime;
 
     /**
      * 

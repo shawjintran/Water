@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.t.water.mapper.RepairInformationMapper">
+
+    <resultMap id="BaseResultMap" type="com.t.water.entity.RepairInformation">
+            <id property="repairId" column="repair_id" jdbcType="BIGINT"/>
+            <result property="managerId" column="manager_id" jdbcType="BIGINT"/>
+            <result property="devId" column="dev_id" jdbcType="BIGINT"/>
+            <result property="repairDescription" column="repair_description" jdbcType="VARCHAR"/>
+            <result property="repairProgress" column="repair_progress" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="isDeleted" column="is_deleted" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        repair_id,manager_id,dev_id,
+        repair_description,repair_progress,create_time,
+        update_time,is_deleted
+    </sql>
+</mapper>

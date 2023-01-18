@@ -10,11 +10,22 @@ import lombok.Data;
 
 /**
  * 
- * @TableName dev_information
+ * @TableName repair_information
  */
-@TableName(value ="dev_information")
+@TableName(value ="repair_information")
 @Data
-public class DevInformation implements Serializable {
+public class RepairInformation implements Serializable {
+    /**
+     * 
+     */
+    @TableId
+    private Long repairId;
+
+    /**
+     * 
+     */
+    private Long managerId;
+
     /**
      * 
      */
@@ -23,27 +34,17 @@ public class DevInformation implements Serializable {
     /**
      * 
      */
-    private Integer devLastLat;
+    private String repairDescription;
 
     /**
      * 
      */
-    private Integer devLastLon;
+    private String repairProgress;
 
     /**
      * 
      */
-    private Integer devStatus;
-
-    /**
-     * 
-     */
-    private Integer devLastPower;
-
-    /**
-     * 
-     */
-    private Date createdTime;
+    private Date createTime;
 
     /**
      * 

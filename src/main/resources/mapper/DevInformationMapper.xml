@@ -5,16 +5,19 @@
 <mapper namespace="com.t.water.mapper.DevInformationMapper">
 
     <resultMap id="BaseResultMap" type="com.t.water.entity.DevInformation">
-            <id property="devId" column="dev_id" jdbcType="BIGINT"/>
-            <result property="devLastTime" column="dev_last_time" jdbcType="TIMESTAMP"/>
+            <result property="devId" column="dev_id" jdbcType="BIGINT"/>
             <result property="devLastLat" column="dev_last_lat" jdbcType="DECIMAL"/>
             <result property="devLastLon" column="dev_last_lon" jdbcType="DECIMAL"/>
-            <result property="devStartime" column="dev_startime" jdbcType="TIMESTAMP"/>
             <result property="devStatus" column="dev_status" jdbcType="TINYINT"/>
+            <result property="devLastPower" column="dev_last_power" jdbcType="TINYINT"/>
+            <result property="createdTime" column="created_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="isDeleted" column="is_deleted" jdbcType="TINYINT"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        dev_id,dev_last_time,dev_last_lat,
-        dev_last_lon,dev_startime,dev_status
+        dev_id,dev_last_lat,dev_last_lon,
+        dev_status,dev_last_power,created_time,
+        update_time,is_deleted
     </sql>
 </mapper>

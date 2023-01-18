@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 /**
 * @author sky
 * @description 针对表【dev_information】的数据库操作Service实现
-* @createDate 2023-01-11 16:53:29
+* @createDate 2023-01-18 18:48:40
 */
 @Service
 public class DevInformationServiceImpl extends ServiceImpl<DevInformationMapper, DevInformation>

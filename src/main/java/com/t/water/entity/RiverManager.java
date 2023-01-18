@@ -10,40 +10,51 @@ import lombok.Data;
 
 /**
  * 
- * @TableName dev_information
+ * @TableName river_manager
  */
-@TableName(value ="dev_information")
+@TableName(value ="river_manager")
 @Data
-public class DevInformation implements Serializable {
+public class RiverManager implements Serializable {
     /**
      * 
      */
-    private Long devId;
+    @TableId
+    private Long managerId;
 
     /**
      * 
      */
-    private Integer devLastLat;
+    private Long superiorId;
 
     /**
      * 
      */
-    private Integer devLastLon;
+    private String managerPhone;
 
     /**
      * 
      */
-    private Integer devStatus;
+    private String managerPwd;
 
     /**
      * 
      */
-    private Integer devLastPower;
+    private String managerPost;
 
     /**
      * 
      */
-    private Date createdTime;
+    private String managerProfileUrl;
+
+    /**
+     * 
+     */
+    private String managerAddress;
+
+    /**
+     * 
+     */
+    private Date createTime;
 
     /**
      * 
