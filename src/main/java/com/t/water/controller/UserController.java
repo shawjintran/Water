@@ -1,9 +1,10 @@
 package com.t.water.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.t.water.config.WaterException;
-import com.t.water.entity.RiverManager;
-import com.t.water.service.RiverManagerService;
+
+import com.t.water.entity.Manager;
+import com.t.water.handler.exceptionhandler.WaterException;
+import com.t.water.service.ManagerService;
 import com.t.water.utils.R;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,20 +16,22 @@ import org.springframework.web.bind.annotation.*;
 @Api(tags = "")
 public class UserController {
 	@Autowired
-	RiverManagerService riverManagerService;
+	ManagerService managerService;
 	@PostMapping("login")
-	public R login(String phone, String pwd) throws Exception {
+	public R login(@RequestBody Manager manager) throws Exception {
+		String phone=manager.getPhone();
+		String pwd=manager.getPwd();
 		if(ObjectUtils.isEmpty(phone)||ObjectUtils.isEmpty(pwd))
 		{
-			return R.fail().setMes("");
+			throw new WaterException(20001,"账号或密码未输入");
 		}
-		QueryWrapper<RiverManager> wrapper = new QueryWrapper<>();
-		wrapper.eq("river_phonenumber",phone);
-		wrapper.eq("river_pwd",pwd);
-		RiverManager one = riverManagerService.getOne(wrapper);
+		QueryWrapper<Manager> wrapper = new QueryWrapper<>();
+		wrapper.eq("phone",phone);
+		wrapper.eq("pwd",pwd);
+		Manager one = managerService.getOne(wrapper);
 		if(ObjectUtils.isEmpty(one))
-			return R.fail().setMes("");
-		return R.ok().setData(one);
+			throw new WaterException(20001,"账号未注册");
+		return R.ok().data("manager",one);
 	}
 	@GetMapping("logout")
 	public void logout(){
