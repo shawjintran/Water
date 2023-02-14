@@ -1,7 +1,9 @@
 package com.t.water.entity;
 
-import com.baomidou.mybatisplus.annotation.*;
-
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.util.Date;
 import lombok.Data;
@@ -38,18 +40,16 @@ public class Repair implements Serializable {
      * 维修进展
      */
     private String repairProgress;
+
     /**
      * 创建时间
      */
-    @TableField(fill= FieldFill.INSERT)
     private Date createdTime;
 
     /**
      * 更新时间
      */
-    @TableField(fill= FieldFill.INSERT_UPDATE)
     private Date updateTime;
-
 
     /**
      * 逻辑删除

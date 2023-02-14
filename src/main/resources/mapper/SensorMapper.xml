@@ -6,6 +6,7 @@
 
     <resultMap id="BaseResultMap" type="com.t.water.entity.Sensor">
             <id property="id" column="id" jdbcType="VARCHAR"/>
+            <result property="devid" column="devId" jdbcType="VARCHAR"/>
             <result property="turbidity" column="turbidity" jdbcType="VARCHAR"/>
             <result property="cod" column="cod" jdbcType="VARCHAR"/>
             <result property="tds" column="tds" jdbcType="VARCHAR"/>
@@ -18,9 +19,9 @@
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,turbidity,cod,
-        tds,ph,temperature,
-        pump_status,created_time,update_time,
-        is_deleted
+        id,devId,turbidity,
+        cod,tds,ph,
+        temperature,pump_status,created_time,
+        update_time,is_deleted
     </sql>
 </mapper>

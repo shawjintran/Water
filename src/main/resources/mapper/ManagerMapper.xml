@@ -6,6 +6,7 @@
 
     <resultMap id="BaseResultMap" type="com.t.water.entity.Manager">
             <id property="id" column="id" jdbcType="VARCHAR"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
             <result property="superiorId" column="superior_id" jdbcType="VARCHAR"/>
             <result property="phone" column="phone" jdbcType="VARCHAR"/>
             <result property="pwd" column="pwd" jdbcType="VARCHAR"/>
@@ -18,9 +19,9 @@
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,superior_id,phone,
-        pwd,post,profile_url,
-        address,created_time,update_time,
-        is_deleted
+        id,name,superior_id,
+        phone,pwd,post,
+        profile_url,address,created_time,
+        update_time,is_deleted
     </sql>
 </mapper>

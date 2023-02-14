@@ -2,6 +2,7 @@ package com.t.water.controller;
 
 import com.t.water.service.OssService;
 import com.t.water.utils.R;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 @RequestMapping("/oss/fileoss")
 @CrossOrigin
+@Api("oss图像存储")
 @Slf4j
 public class OssController {
 

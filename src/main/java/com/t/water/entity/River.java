@@ -1,7 +1,9 @@
 package com.t.water.entity;
 
-import com.baomidou.mybatisplus.annotation.*;
-
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -34,18 +36,16 @@ public class River implements Serializable {
      * 水域状态
      */
     private String riverStatus;
+
     /**
      * 创建时间
      */
-    @TableField(fill= FieldFill.INSERT)
     private Date createdTime;
 
     /**
      * 更新时间
      */
-    @TableField(fill= FieldFill.INSERT_UPDATE)
     private Date updateTime;
-
 
     /**
      * 逻辑删除

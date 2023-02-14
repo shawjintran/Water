@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 /**
 * @author 李可文
 * @description 针对表【sensor】的数据库操作Service实现
-* @createDate 2023-02-02 15:40:33
+* @createDate 2023-02-13 19:47:14
 */
 @Service
 public class SensorServiceImpl extends ServiceImpl<SensorMapper, Sensor>
