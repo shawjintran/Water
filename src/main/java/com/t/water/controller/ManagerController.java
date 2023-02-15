@@ -20,12 +20,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
-
 @Slf4j
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/manager")
 @CrossOrigin
 @Api(tags = "河长管理")
+
 public class ManagerController {
 	@Autowired
 	ManagerService managerService;
@@ -55,12 +55,16 @@ public class ManagerController {
 			throw new WaterException(20001,"账号未注册");
 		return R.ok().data("manager","one");
 	}
-	@GetMapping("logout")
-	public void logout(){
 
-	}
+	/**
+	 * 无
+	 * @param phone
+	 * @param pwd
+	 * @param sms
+	 */
 	@PostMapping("signup")
 	public void signUp(String phone,String pwd,String sms){
+
 	}
 
 	/**

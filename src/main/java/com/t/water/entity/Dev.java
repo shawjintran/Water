@@ -11,56 +11,41 @@ import lombok.Data;
 
 /**
  * 
- * @TableName river
+ * @TableName dev
  */
-@TableName(value ="river")
+@TableName(value ="dev")
 @Data
-public class River implements Serializable {
+public class Dev implements Serializable {
     /**
-     * 水域id
+     * 设备id
      */
     @TableId
     private String id;
 
     /**
-     * 管理员id
+     * 河长的id
      */
     private String managerId;
 
     /**
-     * 河名
+     * 设备最后纬度
      */
-    private String name;
+    private BigDecimal lastLat;
 
     /**
-     * 水域纬度
+     * 设备最后经度
      */
-    private BigDecimal riverLat;
+    private BigDecimal lastLon;
 
     /**
-     * 水域经度
+     * 设备状态
      */
-    private BigDecimal riverLon;
+    private String status;
 
     /**
-     * 水域状态
+     * 设备电量(0~100)
      */
-    private String riverStatus;
-
-    /**
-     * 河长度
-     */
-    private Double length;
-
-    /**
-     * 河宽度
-     */
-    private Double width;
-
-    /**
-     * 河流速
-     */
-    private Double speed;
+    private Integer lastPower;
 
     /**
      * 创建时间
@@ -91,16 +76,13 @@ public class River implements Serializable {
         if (getClass() != that.getClass()) {
             return false;
         }
-        River other = (River) that;
+        Dev other = (Dev) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
             && (this.getManagerId() == null ? other.getManagerId() == null : this.getManagerId().equals(other.getManagerId()))
-            && (this.getName() == null ? other.getName() == null : this.getName().equals(other.getName()))
-            && (this.getRiverLat() == null ? other.getRiverLat() == null : this.getRiverLat().equals(other.getRiverLat()))
-            && (this.getRiverLon() == null ? other.getRiverLon() == null : this.getRiverLon().equals(other.getRiverLon()))
-            && (this.getRiverStatus() == null ? other.getRiverStatus() == null : this.getRiverStatus().equals(other.getRiverStatus()))
-            && (this.getLength() == null ? other.getLength() == null : this.getLength().equals(other.getLength()))
-            && (this.getWidth() == null ? other.getWidth() == null : this.getWidth().equals(other.getWidth()))
-            && (this.getSpeed() == null ? other.getSpeed() == null : this.getSpeed().equals(other.getSpeed()))
+            && (this.getLastLat() == null ? other.getLastLat() == null : this.getLastLat().equals(other.getLastLat()))
+            && (this.getLastLon() == null ? other.getLastLon() == null : this.getLastLon().equals(other.getLastLon()))
+            && (this.getStatus() == null ? other.getStatus() == null : this.getStatus().equals(other.getStatus()))
+            && (this.getLastPower() == null ? other.getLastPower() == null : this.getLastPower().equals(other.getLastPower()))
             && (this.getCreatedTime() == null ? other.getCreatedTime() == null : this.getCreatedTime().equals(other.getCreatedTime()))
             && (this.getUpdateTime() == null ? other.getUpdateTime() == null : this.getUpdateTime().equals(other.getUpdateTime()))
             && (this.getIsDeleted() == null ? other.getIsDeleted() == null : this.getIsDeleted().equals(other.getIsDeleted()));
@@ -112,13 +94,10 @@ public class River implements Serializable {
         int result = 1;
         result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
         result = prime * result + ((getManagerId() == null) ? 0 : getManagerId().hashCode());
-        result = prime * result + ((getName() == null) ? 0 : getName().hashCode());
-        result = prime * result + ((getRiverLat() == null) ? 0 : getRiverLat().hashCode());
-        result = prime * result + ((getRiverLon() == null) ? 0 : getRiverLon().hashCode());
-        result = prime * result + ((getRiverStatus() == null) ? 0 : getRiverStatus().hashCode());
-        result = prime * result + ((getLength() == null) ? 0 : getLength().hashCode());
-        result = prime * result + ((getWidth() == null) ? 0 : getWidth().hashCode());
-        result = prime * result + ((getSpeed() == null) ? 0 : getSpeed().hashCode());
+        result = prime * result + ((getLastLat() == null) ? 0 : getLastLat().hashCode());
+        result = prime * result + ((getLastLon() == null) ? 0 : getLastLon().hashCode());
+        result = prime * result + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        result = prime * result + ((getLastPower() == null) ? 0 : getLastPower().hashCode());
         result = prime * result + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
         result = prime * result + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());
         result = prime * result + ((getIsDeleted() == null) ? 0 : getIsDeleted().hashCode());
@@ -133,13 +112,10 @@ public class River implements Serializable {
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
         sb.append(", managerId=").append(managerId);
-        sb.append(", name=").append(name);
-        sb.append(", riverLat=").append(riverLat);
-        sb.append(", riverLon=").append(riverLon);
-        sb.append(", riverStatus=").append(riverStatus);
-        sb.append(", length=").append(length);
-        sb.append(", width=").append(width);
-        sb.append(", speed=").append(speed);
+        sb.append(", lastLat=").append(lastLat);
+        sb.append(", lastLon=").append(lastLon);
+        sb.append(", status=").append(status);
+        sb.append(", lastPower=").append(lastPower);
         sb.append(", createdTime=").append(createdTime);
         sb.append(", updateTime=").append(updateTime);
         sb.append(", isDeleted=").append(isDeleted);

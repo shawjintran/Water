@@ -5,62 +5,56 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Date;
 import lombok.Data;
 
 /**
  * 
- * @TableName river
+ * @TableName manager
  */
-@TableName(value ="river")
+@TableName(value ="manager")
 @Data
-public class River implements Serializable {
+public class Manager implements Serializable {
     /**
-     * 水域id
+     * 河长id
      */
     @TableId
     private String id;
 
     /**
-     * 管理员id
-     */
-    private String managerId;
-
-    /**
-     * 河名
+     * 名字
      */
     private String name;
 
     /**
-     * 水域纬度
+     * 上级河长id
      */
-    private BigDecimal riverLat;
+    private String superiorId;
 
     /**
-     * 水域经度
+     * 电话号码
      */
-    private BigDecimal riverLon;
+    private String phone;
 
     /**
-     * 水域状态
+     * 密码
      */
-    private String riverStatus;
+    private String pwd;
 
     /**
-     * 河长度
+     * 职位
      */
-    private Double length;
+    private String post;
 
     /**
-     * 河宽度
+     * 头像
      */
-    private Double width;
+    private String profileUrl;
 
     /**
-     * 河流速
+     * 地址
      */
-    private Double speed;
+    private String address;
 
     /**
      * 创建时间
@@ -91,16 +85,15 @@ public class River implements Serializable {
         if (getClass() != that.getClass()) {
             return false;
         }
-        River other = (River) that;
+        Manager other = (Manager) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-            && (this.getManagerId() == null ? other.getManagerId() == null : this.getManagerId().equals(other.getManagerId()))
             && (this.getName() == null ? other.getName() == null : this.getName().equals(other.getName()))
-            && (this.getRiverLat() == null ? other.getRiverLat() == null : this.getRiverLat().equals(other.getRiverLat()))
-            && (this.getRiverLon() == null ? other.getRiverLon() == null : this.getRiverLon().equals(other.getRiverLon()))
-            && (this.getRiverStatus() == null ? other.getRiverStatus() == null : this.getRiverStatus().equals(other.getRiverStatus()))
-            && (this.getLength() == null ? other.getLength() == null : this.getLength().equals(other.getLength()))
-            && (this.getWidth() == null ? other.getWidth() == null : this.getWidth().equals(other.getWidth()))
-            && (this.getSpeed() == null ? other.getSpeed() == null : this.getSpeed().equals(other.getSpeed()))
+            && (this.getSuperiorId() == null ? other.getSuperiorId() == null : this.getSuperiorId().equals(other.getSuperiorId()))
+            && (this.getPhone() == null ? other.getPhone() == null : this.getPhone().equals(other.getPhone()))
+            && (this.getPwd() == null ? other.getPwd() == null : this.getPwd().equals(other.getPwd()))
+            && (this.getPost() == null ? other.getPost() == null : this.getPost().equals(other.getPost()))
+            && (this.getProfileUrl() == null ? other.getProfileUrl() == null : this.getProfileUrl().equals(other.getProfileUrl()))
+            && (this.getAddress() == null ? other.getAddress() == null : this.getAddress().equals(other.getAddress()))
             && (this.getCreatedTime() == null ? other.getCreatedTime() == null : this.getCreatedTime().equals(other.getCreatedTime()))
             && (this.getUpdateTime() == null ? other.getUpdateTime() == null : this.getUpdateTime().equals(other.getUpdateTime()))
             && (this.getIsDeleted() == null ? other.getIsDeleted() == null : this.getIsDeleted().equals(other.getIsDeleted()));
@@ -111,14 +104,13 @@ public class River implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
-        result = prime * result + ((getManagerId() == null) ? 0 : getManagerId().hashCode());
         result = prime * result + ((getName() == null) ? 0 : getName().hashCode());
-        result = prime * result + ((getRiverLat() == null) ? 0 : getRiverLat().hashCode());
-        result = prime * result + ((getRiverLon() == null) ? 0 : getRiverLon().hashCode());
-        result = prime * result + ((getRiverStatus() == null) ? 0 : getRiverStatus().hashCode());
-        result = prime * result + ((getLength() == null) ? 0 : getLength().hashCode());
-        result = prime * result + ((getWidth() == null) ? 0 : getWidth().hashCode());
-        result = prime * result + ((getSpeed() == null) ? 0 : getSpeed().hashCode());
+        result = prime * result + ((getSuperiorId() == null) ? 0 : getSuperiorId().hashCode());
+        result = prime * result + ((getPhone() == null) ? 0 : getPhone().hashCode());
+        result = prime * result + ((getPwd() == null) ? 0 : getPwd().hashCode());
+        result = prime * result + ((getPost() == null) ? 0 : getPost().hashCode());
+        result = prime * result + ((getProfileUrl() == null) ? 0 : getProfileUrl().hashCode());
+        result = prime * result + ((getAddress() == null) ? 0 : getAddress().hashCode());
         result = prime * result + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
         result = prime * result + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());
         result = prime * result + ((getIsDeleted() == null) ? 0 : getIsDeleted().hashCode());
@@ -132,14 +124,13 @@ public class River implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", managerId=").append(managerId);
         sb.append(", name=").append(name);
-        sb.append(", riverLat=").append(riverLat);
-        sb.append(", riverLon=").append(riverLon);
-        sb.append(", riverStatus=").append(riverStatus);
-        sb.append(", length=").append(length);
-        sb.append(", width=").append(width);
-        sb.append(", speed=").append(speed);
+        sb.append(", superiorId=").append(superiorId);
+        sb.append(", phone=").append(phone);
+        sb.append(", pwd=").append(pwd);
+        sb.append(", post=").append(post);
+        sb.append(", profileUrl=").append(profileUrl);
+        sb.append(", address=").append(address);
         sb.append(", createdTime=").append(createdTime);
         sb.append(", updateTime=").append(updateTime);
         sb.append(", isDeleted=").append(isDeleted);

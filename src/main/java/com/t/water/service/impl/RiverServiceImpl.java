@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 /**
 * @author 李可文
 * @description 针对表【river】的数据库操作Service实现
-* @createDate 2023-02-13 19:47:14
+* @createDate 2023-02-14 20:29:03
 */
 @Service
 public class RiverServiceImpl extends ServiceImpl<RiverMapper, River>

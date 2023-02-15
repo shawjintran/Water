@@ -6,17 +6,23 @@
 
     <resultMap id="BaseResultMap" type="com.t.water.entity.River">
             <id property="id" column="id" jdbcType="VARCHAR"/>
+            <result property="managerId" column="manager_id" jdbcType="VARCHAR"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
             <result property="riverLat" column="river_lat" jdbcType="DECIMAL"/>
             <result property="riverLon" column="river_lon" jdbcType="DECIMAL"/>
             <result property="riverStatus" column="river_status" jdbcType="VARCHAR"/>
+            <result property="length" column="length" jdbcType="DOUBLE"/>
+            <result property="width" column="width" jdbcType="DOUBLE"/>
+            <result property="speed" column="speed" jdbcType="DOUBLE"/>
             <result property="createdTime" column="created_time" jdbcType="TIMESTAMP"/>
             <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
             <result property="isDeleted" column="is_deleted" jdbcType="TINYINT"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,river_lat,river_lon,
-        river_status,created_time,update_time,
-        is_deleted
+        id,manager_id,name,
+        river_lat,river_lon,river_status,
+        length,width,speed,
+        created_time,update_time,is_deleted
     </sql>
 </mapper>

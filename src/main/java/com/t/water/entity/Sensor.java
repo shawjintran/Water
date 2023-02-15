@@ -24,7 +24,7 @@ public class Sensor implements Serializable {
     /**
      * 设备id
      */
-    private String devid;
+    private String devId;
 
     /**
      * 浑浊度
@@ -87,7 +87,7 @@ public class Sensor implements Serializable {
         }
         Sensor other = (Sensor) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-            && (this.getDevid() == null ? other.getDevid() == null : this.getDevid().equals(other.getDevid()))
+            && (this.getDevId() == null ? other.getDevId() == null : this.getDevId().equals(other.getDevId()))
             && (this.getTurbidity() == null ? other.getTurbidity() == null : this.getTurbidity().equals(other.getTurbidity()))
             && (this.getCod() == null ? other.getCod() == null : this.getCod().equals(other.getCod()))
             && (this.getTds() == null ? other.getTds() == null : this.getTds().equals(other.getTds()))
@@ -104,7 +104,7 @@ public class Sensor implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
-        result = prime * result + ((getDevid() == null) ? 0 : getDevid().hashCode());
+        result = prime * result + ((getDevId() == null) ? 0 : getDevId().hashCode());
         result = prime * result + ((getTurbidity() == null) ? 0 : getTurbidity().hashCode());
         result = prime * result + ((getCod() == null) ? 0 : getCod().hashCode());
         result = prime * result + ((getTds() == null) ? 0 : getTds().hashCode());
@@ -124,7 +124,7 @@ public class Sensor implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", devid=").append(devid);
+        sb.append(", devId=").append(devId);
         sb.append(", turbidity=").append(turbidity);
         sb.append(", cod=").append(cod);
         sb.append(", tds=").append(tds);
