@@ -24,11 +24,15 @@ public class DevController {
 
     /**
      * 设备添加
-     * @param dev
+     * @param managerId
+     * @param id
      * @return
      */
-    @PostMapping("add")
-    public R addDev(@RequestBody Dev dev){
+    @GetMapping("add/{managerId}/{id}")
+    public R addDev(@PathVariable String managerId,@PathVariable String id){
+        Dev dev = new Dev();
+        dev.setManagerId(managerId);
+        dev.setId(id);
         if(devService.save(dev))
             return R.ok().message("添加设备成功");
         else

@@ -70,8 +70,8 @@ public class ManagerController {
 	 */
 
 	@ApiOperation("注册")
-	@PostMapping("signup")
-	public R signUp(String phone, String pwd, String smsCode){
+	@PostMapping("signup/{phone}/{pwd}/{smsCode}")
+	public R signUp(@PathVariable String phone, @PathVariable String pwd, @PathVariable String smsCode){
 		//判断验证码
 		if(!StringUtils.isEmpty(smsCode)){
 			log.info("验证码不为空,验证码判断");
@@ -168,6 +168,7 @@ public class ManagerController {
 		if(!StringUtils.isEmpty(managerQuery.getPost())){
 			managerQueryWrapper.eq("post",managerQuery.getPost());
 		}
+
 		managerQueryWrapper.orderByDesc("name");
 		managerService.page(managerPage,managerQueryWrapper);
 		long total = managerPage.getTotal();//获取总记录数
@@ -181,7 +182,7 @@ public class ManagerController {
 		HashMap<String, Object> map = new HashMap<>();
 		map.put("total",total);
 		map.put("rows",collect);
-		return R.ok().data("map",map);
+		return R.ok().data("page",map);
 	}
 
 

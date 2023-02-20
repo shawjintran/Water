@@ -1,11 +1,11 @@
 package com.t.water.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
+
 import java.io.Serializable;
 import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 /**
@@ -59,20 +59,43 @@ public class Sensor implements Serializable {
     /**
      * 创建时间
      */
+
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @TableField(fill= FieldFill.INSERT)
     private Date createdTime;
 
     /**
      * 更新时间
      */
+
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @TableField(fill=FieldFill.INSERT_UPDATE)
     private Date updateTime;
 
     /**
      * 逻辑删除
      */
+    @TableLogic(value = "0",delval = "1")
+    @TableField(fill = FieldFill.INSERT)//不用查该字段
     private Integer isDeleted;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
+
+
+    public Sensor initdemo(String id, String devId, Date time){
+        this.setId(id);
+        this.setDevId(devId);
+        this.setTurbidity("0");
+        this.setCod("0");
+        this.setTds("0");
+        this.setPh("0");
+        this.setTemperature(0);
+        this.setCreatedTime(time);
+        this.setUpdateTime(time);
+        this.setPumpStatus(1);
+        return this;
+    }
 
     @Override
     public boolean equals(Object that) {
