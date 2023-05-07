@@ -15,7 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/dev")
 @CrossOrigin
-@Api(tags = "设备管理")
+@Api("设备管理")
 public class DevController {
 
     @Autowired
